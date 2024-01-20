@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from Data import Array
+
 class Sorts:
     def __init__(self, arr):
         self.arr = arr

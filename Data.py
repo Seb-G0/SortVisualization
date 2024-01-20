@@ -1,19 +1,18 @@
-from random import randint
+from random import shuffle
+
 class Array:
-    def __init__(self, values=None, length = 25, max = 1000000):
+    def __init__(self, values=None, length=25, max_value=25):
         self.length = length
-        self.max = max
+        self.max = max_value
         self.data = None
-        self.generate()
         if values is not None:
             self.data = values
-            self.length = len(values)
         else:
             self.generate()
 
-
     def generate(self):
-        data = [randint(0, self.max) for _ in range(self.length)]
+        data = [i for i in range(1, self.length + 1)]
+        shuffle(data)
         self.data = data
         return data
 
@@ -28,6 +27,3 @@ class Array:
 
     def __len__(self):
         return self.length
-
-
-
